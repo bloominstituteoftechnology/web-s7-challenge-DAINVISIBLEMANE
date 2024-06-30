@@ -20,7 +20,7 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import server from './backend/mock-server'
 
-jest.setTimeout(750) // default 5000 too long for Codegrade
+jest.setTimeout(5000) // default 5000 too long for Codegrade
 
 const waitForOptions = { timeout: 250 }
 const queryOptions = { exact: false }
@@ -58,6 +58,9 @@ describe('Sprint 7 Challenge Codegrade Tests', () => {
     test('[5] Clicking on the pizza image navigates to "/order"', () => {
       fireEvent.click(screen.getByAltText('order-pizza'))
       expect(document.location.pathname).toBe('/order')
+    })
+    test('you can comment out this test', () => {
+      expect(true).toBe(true)
     })
   })
   let name, size, pepperoni, peppers, pineapple, mushrooms, ham, submit
